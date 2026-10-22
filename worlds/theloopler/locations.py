@@ -4,8 +4,7 @@ from typing import TYPE_CHECKING
 
 from BaseClasses import ItemClassification, Location
 
-from worlds import items
-from worlds.apquest.locations import create_regular_locations
+from . import items
 
 if TYPE_CHECKING:
     from worlds import TheLooplerWorld
@@ -164,6 +163,66 @@ LOCATION_NAME_TO_ID = {
     "Level Up: Level 42 Item 1": 228,
     "Level Up: Level 42 Item 2": 229,
     "Level Up: Level 42 Item 3": 230,
+    "Combination: Infinity Dura Car Bronze": 300,
+    "Combination: Infinity Dura Car Silver": 301,
+    "Combination: Infinity Dura Car Gold": 302,
+    "Combination: Infinity Dura Car Emerald": 303,
+    "Combination: Infinity Dura Car Diamond": 304,
+    "Combination: Infinity Gold Car Bronze": 305,
+    "Combination: Infinity Gold Car Silver": 306,
+    "Combination: Infinity Gold Car Gold": 307,
+    "Combination: Infinity Gold Car Emerald": 308,
+    "Combination: Infinity Gold Car Diamond": 309,
+    "Combination: Infinity Slot Car Bronze": 310,
+    "Combination: Infinity Slot Car Silver": 311,
+    "Combination: Infinity Slot Car Gold": 312,
+    "Combination: Infinity Slot Car Emerald": 313,
+    "Combination: Infinity Slot Car Diamond": 314,
+    "Combination: Infinity Ghost Car Bronze": 315,
+    "Combination: Infinity Ghost Car Silver": 316,
+    "Combination: Infinity Ghost Car Gold": 317,
+    "Combination: Infinity Ghost Car Emerald": 318,
+    "Combination: Infinity Ghost Car Diamond": 319,
+    "Combination: Infinity Drift Car Bronze": 320,
+    "Combination: Infinity Drift Car Silver": 321,
+    "Combination: Infinity Drift Car Gold": 322,
+    "Combination: Infinity Drift Car Emerald": 323,
+    "Combination: Infinity Drift Car Diamond": 324,
+    "Combination: Infinity Rocket Car Bronze": 325,
+    "Combination: Infinity Rocket Car Silver": 326,
+    "Combination: Infinity Rocket Car Gold": 327,
+    "Combination: Infinity Rocket Car Emerald": 328,
+    "Combination: Infinity Rocket Car Diamond": 329,
+    "Combination: Infinity Luck Car Bronze": 330,
+    "Combination: Infinity Luck Car Silver": 331,
+    "Combination: Infinity Luck Car Gold": 332,
+    "Combination: Infinity Luck Car Emerald": 333,
+    "Combination: Infinity Luck Car Diamond": 334,
+    "Combination: Infinity Tank Car Bronze": 335,
+    "Combination: Infinity Tank Car Silver": 336,
+    "Combination: Infinity Tank Car Gold": 337,
+    "Combination: Infinity Tank Car Emerald": 338,
+    "Combination: Infinity Tank Car Diamond": 339,
+    "Combination: Infinity Freeze Car Bronze": 340,
+    "Combination: Infinity Freeze Car Silver": 341,
+    "Combination: Infinity Freeze Car Gold": 342,
+    "Combination: Infinity Freeze Car Emerald": 343,
+    "Combination: Infinity Freeze Car Diamond": 344,
+    "Combination: Hotdog Dura Car Bronze": 345,
+    "Combination: Hotdog Dura Car Silver": 346,
+    "Combination: Hotdog Dura Car Gold": 347,
+    "Combination: Hotdog Dura Car Emerald": 348,
+    "Combination: Hotdog Dura Car Diamond": 349,
+    "Combination: Hotdog Gold Car Bronze": 350,
+    "Combination: Hotdog Gold Car Silver": 351,
+    "Combination: Hotdog Gold Car Gold": 352,
+    "Combination: Hotdog Gold Car Emerald": 353,
+    "Combination: Hotdog Gold Car Diamond": 354,
+    "Combination: Hotdog Slot Car Bronze": 355,
+    "Combination: Hotdog Slot Car Silver": 356,
+    "Combination: Hotdog Slot Car Gold": 357,
+    "Combination: Hotdog Slot Car Emerald": 358,
+    "Combination: Hotdog Slot Car Diamond": 359,
 }
 
 class TheLooplerLocation(Location):
@@ -187,6 +246,20 @@ def create_regular_locations(world: TheLooplerWorld) -> None:
     luck_car = world.get_region("Luck Car")
     tank_car = world.get_region("Tank Car")
     freeze_car = world.get_region("Freeze Car")
+    infinity_track = world.get_region("Infinity Track")
+    hotdog_track = world.get_region("Hotdog Track")
+    crown_track = world.get_region("Crown Track")
+    whistle_track = world.get_region("Whistle Track")
+    whirl_track = world.get_region("Whirl Track")
+    donut_track = world.get_region("Donut Track")
+    triangle_track = world.get_region("Triangle Track")
+    burger_track = world.get_region("Burger Track")
+    mheep_track = world.get_region("Mheep Track")
+    bronze_diffi = world.get_region("Bronze Difficulty")
+    silver_diffi = world.get_region("Silver Difficulty")
+    gold_diffi = world.get_region("Gold Difficulty")
+    emerald_diffi = world.get_region("Emerald Difficulty")
+    diamond_diffi = world.get_region("Diamond Difficulty")
 
     menu_locations = get_location_names_with_ids(
         ["Level Up: Level 1 Item 1", "Level Up: Level 1 Item 2", "Level Up: Level 1 Item 3",
@@ -233,3 +306,54 @@ def create_regular_locations(world: TheLooplerWorld) -> None:
          "Level Up: Level 42 Item 1", "Level Up: Level 42 Item 2", "Level Up: Level 42 Item 3",
          ]
     )
+
+    menu.add_locations(menu_locations, TheLooplerLocation)
+
+    dura_car_locations = get_location_names_with_ids(["Car: Dura Completed"])
+    gold_car_locations = get_location_names_with_ids(["Car: Gold Completed"])
+    slot_car_locations = get_location_names_with_ids(["Car: Slot Completed"])
+    ghost_car_locations = get_location_names_with_ids(["Car: Ghost Completed"])
+    drift_car_locations = get_location_names_with_ids(["Car: Drift Completed"])
+    rocket_car_locations = get_location_names_with_ids(["Car: Rocket Completed"])
+    luck_car_locations = get_location_names_with_ids(["Car: Luck Completed"])
+    tank_car_locations = get_location_names_with_ids(["Car: Tank Completed"])
+    freeze_car_locations = get_location_names_with_ids(["Car: Freeze Completed"])
+
+    dura_car.add_locations(dura_car_locations, TheLooplerLocation)
+    gold_car.add_locations(gold_car_locations, TheLooplerLocation)
+    slot_car.add_locations(slot_car_locations, TheLooplerLocation)
+    ghost_car.add_locations(ghost_car_locations, TheLooplerLocation)
+    drift_car.add_locations(drift_car_locations, TheLooplerLocation)
+    rocket_car.add_locations(rocket_car_locations, TheLooplerLocation)
+    luck_car.add_locations(luck_car_locations, TheLooplerLocation)
+    tank_car.add_locations(tank_car_locations, TheLooplerLocation)
+    freeze_car.add_locations(freeze_car_locations, TheLooplerLocation)
+
+    infinity_track_locations = get_location_names_with_ids(["Track: Infinity Completed"])
+    hotdog_track_locations = get_location_names_with_ids(["Track: Hotdog Completed"])
+    crown_track_locations = get_location_names_with_ids(["Track: Crown Completed"])
+    whistle_track_locations = get_location_names_with_ids(["Track: Whistle Completed"])
+    whirl_track_locations = get_location_names_with_ids(["Track: Whirl Completed"])
+    donut_track_locations = get_location_names_with_ids(["Track: Donut Completed"])
+    triangle_track_locations = get_location_names_with_ids(["Track: Triangle Completed"])
+    burger_track_locations = get_location_names_with_ids(["Track: Burger Completed"])
+    mheep_track_locations = get_location_names_with_ids(["Track: Mheep Completed"])
+
+    infinity_track.add_locations(infinity_track_locations, TheLooplerLocation)
+    hotdog_track.add_locations(hotdog_track_locations, TheLooplerLocation)
+    crown_track.add_locations(crown_track_locations, TheLooplerLocation)
+    whistle_track.add_locations(whistle_track_locations, TheLooplerLocation)
+    whirl_track.add_locations(whirl_track_locations, TheLooplerLocation)
+    donut_track.add_locations(donut_track_locations, TheLooplerLocation)
+    triangle_track.add_locations(triangle_track_locations, TheLooplerLocation)
+    burger_track.add_locations(burger_track_locations, TheLooplerLocation)
+    mheep_track.add_locations(mheep_track_locations, TheLooplerLocation)
+
+    bronze_diffi_locations = get_location_names_with_ids([
+        "Loop: Bronze Completed",
+        "Combination: Infinity Dura Car Bronze", "Combination: Infinity Gold Car Bronze",
+        "Combination: Infinity Slot Car Bronze", "Combination: Infinity Ghost Car Bronze",
+        "Combination: Infinity Drift Car Bronze", "Combination: Infinity Rocket Car Bronze",
+        "Combination: Infinity Luck Car Bronze", "Combination: Infinity Tank Car Bronze",
+        "Combination: Infinity Freeze Car Bronze"
+    ])
