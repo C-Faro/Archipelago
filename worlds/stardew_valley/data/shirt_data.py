@@ -1,6 +1,6 @@
 from typing import List
 
-from worlds.stardew_valley.strings.animal_product_names import AnimalProduct
+from worlds import AnimalProduct
 from worlds.stardew_valley.strings.forageable_names import Forageable
 
 all_shirts = []

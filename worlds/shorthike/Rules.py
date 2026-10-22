@@ -1,4 +1,4 @@
-from worlds.generic.Rules import forbid_items_for_player, add_rule
+from worlds import forbid_items_for_player, add_rule
 from .Options import Goal, GoldenFeatherProgression, MinShopCheckLogic, ShopCheckLogic
 
 

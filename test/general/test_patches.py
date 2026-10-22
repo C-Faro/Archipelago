@@ -1,6 +1,6 @@
 ﻿import unittest
-from worlds.AutoWorld import AutoWorldRegister
-from worlds.Files import AutoPatchRegister
+from worlds import AutoWorldRegister
+from worlds import AutoPatchRegister
 
 
 class TestPatches(unittest.TestCase):

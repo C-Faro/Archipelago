@@ -2,7 +2,7 @@ import json
 import Utils
 
 from BaseClasses import Location
-from worlds.Files import APProcedurePatch, APTokenMixin, APTokenTypes, APPatchExtension
+from worlds import APProcedurePatch, APTokenMixin, APTokenTypes, APPatchExtension
 from typing import List, Dict, Union, Iterable, Collection, Optional, TYPE_CHECKING
 
 import hashlib

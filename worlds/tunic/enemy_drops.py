@@ -1,7 +1,7 @@
 from enum import IntEnum
 from typing import TYPE_CHECKING, NamedTuple
 
-from worlds.generic.Rules import set_rule, add_rule
+from worlds import set_rule, add_rule
 
 from .constants import *
 from .logic_helpers import (has_melee, has_sword, can_shop, has_ability, has_enemy_soul, has_ladder,

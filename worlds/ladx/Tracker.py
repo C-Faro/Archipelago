@@ -1,6 +1,6 @@
 import typing
 
-from worlds.ladx.GpsTracker import GpsTracker
+from worlds import GpsTracker
 from .LADXR.checkMetadata import checkMetadataTable
 import json
 import logging

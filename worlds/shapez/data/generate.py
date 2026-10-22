@@ -1,7 +1,7 @@
 import itertools
 import time
 
-from worlds.shapez.data.strings import SHAPESANITY, REGIONS
+from worlds import SHAPESANITY, REGIONS
 
 shapesanity_simple: dict[str, str] = {}
 shapesanity_1_4: dict[str, str] = {}

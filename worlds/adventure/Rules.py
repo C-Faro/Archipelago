@@ -1,5 +1,5 @@
 from .Options import BatLogic, DifficultySwitchB
-from worlds.generic.Rules import add_rule, set_rule, forbid_item
+from worlds import add_rule, set_rule, forbid_item
 
 
 def set_rules(self) -> None:

@@ -3,7 +3,7 @@ import zlib
 import os
 
 import Utils
-from worlds.Files import APDeltaPatch
+from worlds import APDeltaPatch
 
 NA10CHECKSUM = '337bd6f1a1163df31bf2633665589ab0'
 ROM_PLAYER_LIMIT = 65535

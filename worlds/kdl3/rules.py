@@ -1,5 +1,5 @@
 from BaseClasses import ItemClassification
-from worlds.generic.Rules import set_rule, add_rule
+from worlds import set_rule, add_rule
 from .items import KDL3Item
 from .locations import location_table
 from .names import location_name, enemy_abilities, animal_friend_spawns

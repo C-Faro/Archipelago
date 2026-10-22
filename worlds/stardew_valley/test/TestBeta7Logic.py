@@ -1,4 +1,4 @@
-from worlds.stardew_valley import BackpackProgression, ToolProgression, SeasonRandomization
+from worlds import BackpackProgression, ToolProgression, SeasonRandomization
 from worlds.stardew_valley.mods.mod_data import ModNames
 from worlds.stardew_valley.options import BackpackSize, Mods, QuestLocations, SkillProgression, Secretsanity, Museumsanity, Booksanity, Hatsanity, Cropsanity, \
     StartWithout

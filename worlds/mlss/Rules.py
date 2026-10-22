@@ -1,6 +1,6 @@
 import typing
 
-from worlds.generic.Rules import add_rule, forbid_item
+from worlds import add_rule, forbid_item
 from .Names.LocationName import LocationName
 from .Locations import all_locations, hidden
 from . import StateLogic

@@ -1,7 +1,7 @@
 import unittest
 
 from BaseClasses import MultiWorld
-from worlds.AutoWorld import AutoWorldRegister
+from worlds import AutoWorldRegister
 from . import setup_solo_multiworld
 
 

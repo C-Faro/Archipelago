@@ -1,4 +1,4 @@
-from worlds.generic.Rules import set_rule, add_rule
+from worlds import set_rule, add_rule
 from BaseClasses import CollectionState
 from typing import TYPE_CHECKING
 

@@ -1,7 +1,7 @@
 import typing
 
 from BaseClasses import Location, MultiWorld
-from worlds.AutoWorld import World
+from worlds import World
 from .Names import LocationName
 from .Missions import stage_name_prefixes, mission_orders
 

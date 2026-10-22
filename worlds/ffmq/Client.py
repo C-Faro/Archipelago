@@ -1,6 +1,6 @@
 
 from NetUtils import ClientStatus, color
-from worlds.AutoSNIClient import SNIClient
+from worlds import SNIClient
 from .Regions import offset
 import logging
 

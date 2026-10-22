@@ -1,4 +1,4 @@
-from worlds.AutoWorld import CollectionState
+from worlds import CollectionState
 from .Rules import can_use_hat, can_use_hookshot, can_hit, zipline_logic, get_difficulty, has_paintings
 from .Types import HatType, Difficulty, HatInTimeLocation, HatInTimeItem, LocData, HitType
 from .DeathWishLocations import dw_prereqs, dw_candles

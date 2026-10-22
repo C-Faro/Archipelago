@@ -1,7 +1,7 @@
 from copy import deepcopy
 import typing
 
-from worlds.Files import APTokenTypes
+from worlds import APTokenTypes
 
 from . import poke_data, logic
 from .rom_addresses import rom_addresses

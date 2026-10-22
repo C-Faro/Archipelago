@@ -1,7 +1,7 @@
 import json
 import pkgutil
 
-from worlds.AutoWorld import World
+from worlds import World
 
 tileset_names = [
     "grass_hills",

@@ -1,7 +1,7 @@
 import typing
 
 from BaseClasses import MultiWorld
-from worlds.AutoWorld import World
+from worlds import World
 from .Names import LocationName, ItemName
 from .Locations import boss_gate_set
 from worlds.AutoWorld import LogicMixin

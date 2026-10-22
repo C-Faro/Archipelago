@@ -1,7 +1,7 @@
 import typing
 
 from BaseClasses import Location
-from worlds.AutoWorld import World
+from worlds import World
 from .Names import LocationName
 
 class SMWLocation(Location):

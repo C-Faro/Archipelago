@@ -1,6 +1,6 @@
 from unittest import TestCase
 
-from worlds.AutoWorld import AutoWorldRegister
+from worlds import AutoWorldRegister
 
 
 class TestNameGroups(TestCase):

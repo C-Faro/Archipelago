@@ -2,7 +2,7 @@ from __future__ import annotations
 
 import Utils
 import settings
-import worlds.Files
+import worlds
 
 LTTPJPN10HASH: str = "03a63945398191337e896e5771f77173"
 RANDOMIZERBASEHASH: str = "8704fb9b9fa4fad52d4d2f9a95fb5360"

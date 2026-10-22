@@ -1,5 +1,5 @@
 import sys
-from worlds.ahit.Client import launch
+from worlds import launch
 import Utils
 import ModuleUpdate
 ModuleUpdate.update()

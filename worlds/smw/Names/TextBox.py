@@ -1,5 +1,5 @@
 
-from worlds.AutoWorld import World
+from worlds import World
 
 import math
 

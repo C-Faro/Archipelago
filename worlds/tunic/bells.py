@@ -1,6 +1,6 @@
 from typing import NamedTuple, TYPE_CHECKING
 
-from worlds.generic.Rules import set_rule
+from worlds import set_rule
 
 from .constants import base_id
 from .logic_helpers import has_melee

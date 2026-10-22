@@ -1,5 +1,5 @@
-from worlds.AutoWorld import CollectionState
-from worlds.generic.Rules import add_rule, set_rule
+from worlds import CollectionState
+from worlds import add_rule, set_rule
 from .Locations import location_table, zipline_unlocks, is_location_valid, shop_locations, event_locs
 from .Types import HatType, ChapterIndex, hat_type_to_item, Difficulty, HitType
 from BaseClasses import Location, Entrance, Region

@@ -1,7 +1,7 @@
 import unittest
 from random import Random
 
-from worlds.AutoWorld import AutoWorldRegister
+from worlds import AutoWorldRegister
 from test.general import setup_solo_multiworld
 
 from ..Items import *

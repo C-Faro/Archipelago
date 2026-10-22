@@ -2,7 +2,7 @@ import random
 import unittest
 from types import SimpleNamespace
 
-from worlds.alttp.PotShuffle import (
+from worlds import (
     POT_KEY,
     POT_HOLE,
     generate_pot_shuffle,

@@ -1,4 +1,4 @@
-from worlds.generic.Rules import set_rule, forbid_items_for_player, add_rule
+from worlds import set_rule, forbid_items_for_player, add_rule
 from typing import TYPE_CHECKING
 from .Options import ShopRandomizer, MonkeyCavesMode
 if TYPE_CHECKING:

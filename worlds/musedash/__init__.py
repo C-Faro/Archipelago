@@ -1,4 +1,4 @@
-from worlds.AutoWorld import World, WebWorld
+from worlds import World, WebWorld
 from BaseClasses import Region, Item, ItemClassification, Tutorial
 from typing import List, ClassVar, Type, Set
 from math import floor

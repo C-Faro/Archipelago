@@ -1,7 +1,7 @@
 import hashlib
 import os
 import Utils
-from worlds.Files import APDeltaPatch
+from worlds import APDeltaPatch
 from settings import get_settings
 from typing import TYPE_CHECKING, Collection, SupportsIndex
 

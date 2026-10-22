@@ -1,7 +1,7 @@
 import math
 
 from BaseClasses import ItemClassification
-from worlds.generic.Rules import add_rule, item_name_in_locations, set_rule
+from worlds import add_rule, item_name_in_locations, set_rule
 from . import Options
 from .Items import DLCQuestItem
 

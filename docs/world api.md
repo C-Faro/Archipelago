@@ -31,7 +31,7 @@ follow [reST style](https://peps.python.org/pep-0287/).
 Example:
 
 ```python
-from worlds.AutoWorld import World
+from worlds import World
 
 
 class MyGameWorld(World):
@@ -643,7 +643,7 @@ def create_items(self) -> None:
 ### Setting Rules
 
 ```python
-from worlds.generic.Rules import add_rule, set_rule, forbid_item, add_item_rule
+from worlds import add_rule, set_rule, forbid_item, add_item_rule
 from .items import get_item_type
 
 
@@ -725,7 +725,7 @@ def mygame_has_key(self, state: CollectionState, player: int) -> bool:
 ```python
 # __init__.py
 
-from worlds.generic.Rules import set_rule
+from worlds import set_rule
 from . import logic
 
 
@@ -759,7 +759,8 @@ as well as `init_mixin` and `copy_mixin` functions so that this variable gets in
 
 ```python
 from BaseClasses import CollectionState, MultiWorld
-from worlds.AutoWorld import LogicMixin
+from worlds import LogicMixin
+
 
 class MyGameState(LogicMixin):
     mygame_defeatable_enemies: dict[int, set[str]]  # per player

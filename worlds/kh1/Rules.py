@@ -1,5 +1,5 @@
 from BaseClasses import CollectionState
-from worlds.generic.Rules import add_rule, add_item_rule
+from worlds import add_rule, add_item_rule
 from math import ceil
 from BaseClasses import ItemClassification
 from .Data import WORLD_KEY_ITEMS, LOGIC_BEGINNER, LOGIC_NORMAL, LOGIC_PROUD, LOGIC_MINIMAL

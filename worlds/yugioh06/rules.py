@@ -1,4 +1,4 @@
-from worlds.generic.Rules import add_rule
+from worlds import add_rule
 
 from . import yugioh06_difficulty
 from .fusions import count_has_materials

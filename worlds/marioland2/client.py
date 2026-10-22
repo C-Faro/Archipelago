@@ -2,7 +2,7 @@ import base64
 import logging
 
 from NetUtils import ClientStatus
-from worlds._bizhawk.client import BizHawkClient
+from worlds import BizHawkClient
 from worlds._bizhawk import read, write, guarded_write
 
 from .rom_addresses import rom_addresses

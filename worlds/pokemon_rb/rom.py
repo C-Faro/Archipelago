@@ -3,7 +3,7 @@ import pkgutil
 import typing
 
 import Utils
-from worlds.Files import APProcedurePatch, APTokenMixin, APTokenTypes
+from worlds import APProcedurePatch, APTokenMixin, APTokenTypes
 
 from . import poke_data
 from .items import item_table

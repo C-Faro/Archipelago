@@ -1,7 +1,7 @@
 import unittest
 
 from BaseClasses import CollectionState
-from worlds.AutoWorld import AutoWorldRegister
+from worlds import AutoWorldRegister
 from . import setup_solo_multiworld, gen_steps
 
 

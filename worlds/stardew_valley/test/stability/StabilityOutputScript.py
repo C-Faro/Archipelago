@@ -1,7 +1,7 @@
 import argparse
 import json
 
-from worlds.stardew_valley.test.options.presets import maxsanity_mods_7_x_x_exclude_disabled
+from worlds import maxsanity_mods_7_x_x_exclude_disabled
 from ..bases import setup_solo_multiworld
 from ...options import FarmType, EntranceRandomization
 

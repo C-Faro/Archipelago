@@ -1,7 +1,7 @@
 from unittest import TestCase
 
 from settings import Group
-from worlds.AutoWorld import AutoWorldRegister
+from worlds import AutoWorldRegister
 
 
 class TestSettings(TestCase):

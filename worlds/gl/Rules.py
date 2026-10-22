@@ -1,7 +1,7 @@
 import typing
 
 from BaseClasses import CollectionRule
-from worlds.generic.Rules import add_rule, forbid_item
+from worlds import add_rule, forbid_item
 
 from .Data import difficulty_lambda, level_locations, obelisks, boss_regions, excluded_levels, spawner_trap_ids, \
     difficulty_lambda_no_portal

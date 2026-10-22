@@ -120,7 +120,7 @@ class APContainer:
     version: ClassVar[int] = container_version
     compression_level: ClassVar[int] = 9
     compression_method: ClassVar[int] = zipfile.ZIP_DEFLATED
-    manifest_path: str = "archipelago.json"
+    manifest_path: str = "the_loopler/archipelago.json"
     path: Optional[str]
 
     def __init__(self, path: Optional[str] = None):

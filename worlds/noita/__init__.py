@@ -1,5 +1,5 @@
 from BaseClasses import Item, Tutorial
-from worlds.AutoWorld import WebWorld, World
+from worlds import WebWorld, World
 from typing import Dict, Any
 from . import events, items, locations, regions, rules
 from .options import NoitaOptions

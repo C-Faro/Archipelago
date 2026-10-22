@@ -2,7 +2,7 @@ import os
 from typing import BinaryIO, Optional
 
 import Utils
-from worlds.Files import APDeltaPatch
+from worlds import APDeltaPatch
 
 USHASH = '6e9c94511d04fac6e0a1e582c170be3a'
 

@@ -4,7 +4,7 @@ import pkgutil
 
 import Utils
 
-from worlds.Files import APProcedurePatch, APTokenMixin, APTokenTypes
+from worlds import APProcedurePatch, APTokenMixin, APTokenTypes
 from settings import get_settings
 
 from .rom_addresses import rom_addresses

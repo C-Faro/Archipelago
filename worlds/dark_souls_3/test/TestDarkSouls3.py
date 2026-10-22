@@ -1,6 +1,6 @@
 from test.bases import WorldTestBase
 
-from worlds.dark_souls_3.Items import item_dictionary
+from worlds import item_dictionary
 from worlds.dark_souls_3.Locations import location_tables
 from worlds.dark_souls_3.Bosses import all_bosses
 

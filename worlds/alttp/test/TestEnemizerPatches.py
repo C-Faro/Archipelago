@@ -1,7 +1,7 @@
 import unittest
 from types import SimpleNamespace
 
-from worlds.alttp.EnemizerPatches import (
+from worlds import (
     ARROW_REFILL_5_SPRITE_ID,
     BOSS_GFX_SHEET_INDEXES,
     BOSS_PATCH_DATA,

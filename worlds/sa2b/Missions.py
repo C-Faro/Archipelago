@@ -2,7 +2,7 @@ import typing
 import copy
 
 from BaseClasses import MultiWorld
-from worlds.AutoWorld import World
+from worlds import World
 
 
 mission_orders: typing.List[typing.List[int]] = [

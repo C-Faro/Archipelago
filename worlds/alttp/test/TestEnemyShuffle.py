@@ -2,7 +2,7 @@ import unittest
 from types import SimpleNamespace
 import random
 
-from worlds.alttp.EnemyShuffle import (
+from worlds import (
     DungeonEnemyRoom,
     DungeonEnemySprite,
     DungeonSpriteGroup,

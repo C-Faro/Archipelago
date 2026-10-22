@@ -1,5 +1,5 @@
 import unittest
-from worlds.AutoWorld import AutoWorldRegister
+from worlds import AutoWorldRegister
 
 
 class TestNames(unittest.TestCase):

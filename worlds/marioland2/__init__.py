@@ -3,7 +3,7 @@ import Utils
 import settings
 from copy import deepcopy
 
-from worlds.AutoWorld import World, WebWorld
+from worlds import World, WebWorld
 from BaseClasses import Region, Location, Item, ItemClassification, Tutorial
 
 from . import client

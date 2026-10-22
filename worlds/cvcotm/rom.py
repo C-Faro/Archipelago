@@ -3,7 +3,7 @@ import Utils
 import logging
 import json
 
-from worlds.Files import APProcedurePatch, APTokenMixin, APTokenTypes, APPatchExtension
+from worlds import APProcedurePatch, APTokenMixin, APTokenTypes, APPatchExtension
 from typing import Dict, Optional, Collection, TYPE_CHECKING
 
 import hashlib

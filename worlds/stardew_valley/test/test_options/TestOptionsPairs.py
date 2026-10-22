@@ -1,4 +1,4 @@
-from worlds.stardew_valley import options
+from worlds import options
 from ...test.assertion import WorldAssertMixin
 from ...test.bases import SVTestBase
 

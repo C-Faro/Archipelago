@@ -1,5 +1,5 @@
 from BaseClasses import ItemClassification
-from worlds.Files import APDeltaPatch
+from worlds import APDeltaPatch
 
 import Utils
 import os

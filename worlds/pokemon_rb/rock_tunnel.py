@@ -1,7 +1,7 @@
 import random
 import typing
 
-from worlds.Files import APTokenTypes
+from worlds import APTokenTypes
 
 from .rom_addresses import rom_addresses
 

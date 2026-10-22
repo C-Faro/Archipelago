@@ -1,4 +1,4 @@
-from worlds.LauncherComponents import Component, Type, components, launch
+from worlds import Component, Type, components, launch
 
 
 # Launcher components can be used to add entries to the launcher if desired.

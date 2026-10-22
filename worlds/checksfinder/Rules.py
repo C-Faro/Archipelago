@@ -1,4 +1,4 @@
-from worlds.generic.Rules import set_rule
+from worlds import set_rule
 from BaseClasses import MultiWorld
 
 
