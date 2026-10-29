@@ -569,13 +569,12 @@ def create_all_items(world: TheLooplerWorld) -> None:
 
     starting_items = {starting_track, starting_car, starting_loop}
 
-    world.push_precollected(starting_car)
-    world.push_precollected(starting_track)
-    world.push_precollected(starting_loop)
+    for item in starting_items:
+        world.push_precollected(item)
 
     world.starting_item_names = {item.name for item in starting_items}
 
-    for item in world.starting_item_names:
+    for item in starting_items:
         itempool.remove(item)
 
     number_of_items = len(itempool)

@@ -6,6 +6,7 @@ from worlds.AutoWorld import World
 from . import items, locations, regions, rules, web_world
 from . import options as theloopler_options
 
+
 class TheLooplerWorld(World):
     game = "The Loopler"
 
