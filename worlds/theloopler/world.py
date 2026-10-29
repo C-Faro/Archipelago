@@ -6,8 +6,6 @@ from worlds.AutoWorld import World
 from . import items, locations, regions, rules, web_world
 from . import options as theloopler_options
 
-starting_item_names = {}
-
 class TheLooplerWorld(World):
     game = "The Loopler"
 
@@ -20,6 +18,8 @@ class TheLooplerWorld(World):
     item_name_to_id = items.ITEM_NAME_TO_ID
 
     origin_region_name = "Menu"
+
+    starting_item_names: set[str]
 
     def create_regions(self) -> None:
         regions.create_and_connect_regions(self)
@@ -39,5 +39,5 @@ class TheLooplerWorld(World):
 
     def fill_slot_data(self) -> Mapping[str, Any]:
         return self.options.as_dict(
-            "specific_sanity", "trap_chance", "goal"
+            "specific_sanity", "trap_chance", "goal", "starting_items_rando"
         )

@@ -3,7 +3,6 @@ from __future__ import annotations
 from typing import TYPE_CHECKING
 
 from BaseClasses import Item, ItemClassification
-from . import world
 
 if TYPE_CHECKING:
     from .world import TheLooplerWorld
@@ -568,11 +567,13 @@ def create_all_items(world: TheLooplerWorld) -> None:
         starting_track = world.create_item("Track: Infinity Track")
         starting_car = world.create_item("Car: Dura Car")
 
+    starting_items = {starting_track, starting_car, starting_loop}
+
     world.push_precollected(starting_car)
     world.push_precollected(starting_track)
     world.push_precollected(starting_loop)
 
-    world.starting_item_names = {starting_track, starting_loop, starting_car}
+    world.starting_item_names = {item.name for item in starting_items}
 
     for item in world.starting_item_names:
         itempool.remove(item)
