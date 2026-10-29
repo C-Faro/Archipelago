@@ -6,6 +6,7 @@ from worlds.AutoWorld import World
 from . import items, locations, regions, rules, web_world
 from . import options as theloopler_options
 
+
 class TheLooplerWorld(World):
     game = "The Loopler"
 
@@ -19,7 +20,7 @@ class TheLooplerWorld(World):
 
     origin_region_name = "Menu"
 
-    starting_item_names: set[str]
+    starting_item_names = []
 
     def create_regions(self) -> None:
         regions.create_and_connect_regions(self)
