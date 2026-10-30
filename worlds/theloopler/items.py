@@ -126,7 +126,7 @@ ITEM_NAME_TO_ID = {
     "Gate: Screech Gate": 116,
     "Gate: Mirror Gate": 117,
     "Gate: Grave Gate": 118,
-    "Gate: Lucky Converison Gate": 119,
+    "Gate: Lucky Conversion Gate": 119,
     "Gate: Brake Gate": 120,
     "Gate: Clover Gate": 121,
     "Gate: Chain Gate": 122,
@@ -291,7 +291,7 @@ DEFAULT_ITEM_CLASSIFICATION = {
     "Gate: Screech Gate": ItemClassification.useful,
     "Gate: Mirror Gate": ItemClassification.useful,
     "Gate: Grave Gate": ItemClassification.useful,
-    "Gate: Lucky Converison Gate": ItemClassification.useful,
+    "Gate: Lucky Conversion Gate": ItemClassification.useful,
     "Gate: Brake Gate": ItemClassification.useful,
     "Gate: Clover Gate": ItemClassification.useful,
     "Gate: Chain Gate": ItemClassification.useful,
@@ -531,7 +531,7 @@ ITEM_TABLE = {
     "Gate: Screech Gate",
     "Gate: Mirror Gate",
     "Gate: Grave Gate",
-    "Gate: Lucky Converison Gate",
+    "Gate: Lucky Conversion Gate",
     "Gate: Brake Gate",
     "Gate: Clover Gate",
     "Gate: Chain Gate",
@@ -572,7 +572,7 @@ def create_all_items(world: TheLooplerWorld) -> None:
     for item in starting_items:
         world.push_precollected(item)
 
-    world.starting_item_names = {item.name for item in starting_items}
+    world.starting_item_names = {item for item in starting_items}
 
     for item in starting_items:
         itempool.remove(item)
