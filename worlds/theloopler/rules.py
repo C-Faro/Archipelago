@@ -2,7 +2,6 @@ from __future__ import annotations
 
 from typing import TYPE_CHECKING
 
-from rule_builder.options import OptionFilter
 from rule_builder.rules import Has, HasAll, Rule
 
 from .options import Goal
@@ -29,7 +28,6 @@ def loop_item(loop: str) -> str:
 def track_rule(world, track: str) -> Rule | None:
     name = track_item(track)
     return None if name in world.starting_item_names else Has(name)
-
 
 def car_rule(world, car: str) -> Rule | None:
     name = car_item(car)
@@ -60,8 +58,8 @@ def goal_rule(world: TheLooplerWorld) -> Rule | None:
         return HasAll(*tracks)
     if goal == Goal.option_all_loops:
         return HasAll(*loops)
-    if goal == Goal.option_all_cars_tracks_combinations:
-        return HasAll(*cars, *tracks)
+    if goal == Goal.option_all_combinations:
+        return HasAll(*cars, *tracks, *loops)
     if goal == Goal.option_max_level:
         return None
     if goal == Goal.option_everything:

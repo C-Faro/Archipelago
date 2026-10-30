@@ -544,8 +544,8 @@ class TheLooplerItem(Item):
 
 def get_random_filler_item_name(world: TheLooplerWorld) -> str:
     if world.random.randint(0, 99) < world.options.trap_chance:
-        return world.random.choice(list(TRAP_TABLE))
-    return world.random.choice(list(FILLER_TABLE))
+        return world.random.choice(sorted(TRAP_TABLE))
+    return world.random.choice(sorted(FILLER_TABLE))
 
 def create_item_with_correct_classification(world: TheLooplerWorld, name: str) -> TheLooplerItem:
     classification = DEFAULT_ITEM_CLASSIFICATION[name]

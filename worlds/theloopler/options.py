@@ -35,7 +35,7 @@ class Goal(Choice):
     option_infinity = 0
     option_all_tracks = 1
     option_all_loops = 2
-    option_all_cars_tracks_combinations = 3
+    option_all_combinations = 3
     option_max_level = 4
     option_everything = 5
 
@@ -61,7 +61,7 @@ class TheLooplerOptions(PerGameCommonOptions):
 option_groups = [
     OptionGroup(
         "The Basics",
-        [SpecificSanity, TrapChance, Goal],
+        [SpecificSanity, TrapChance, Goal, StartingItemsRandomized]
     )
 ]
 
@@ -70,12 +70,12 @@ option_presets = {
         "specific_sanity": False,
         "trap_chance": 10,
         "goal": 4,
-        "starting_items_rando": False,
+        "starting_items_rando": False
     },
     "Rain": {
         "specific_sanity": True,
         "trap_chance": 100,
         "goal": 5,
-        "starting_items_rando": True,
+        "starting_items_rando": True
     },
 }

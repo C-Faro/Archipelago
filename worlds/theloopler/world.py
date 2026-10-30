@@ -22,6 +22,20 @@ class TheLooplerWorld(World):
 
     starting_item_names = []
 
+    item_name_groups = {
+        "Cars": items.CAR_TABLE,
+        "Tracks": items.TRACK_TABLE,
+        "Loops": items.LOOP_TABLE,
+        "Traps": items.TRAP_TABLE,
+        "Cards": {n for n in items.ITEM_NAME_TO_ID if n.startswith("Card: ")},
+        "Charms": {n for n in items.ITEM_NAME_TO_ID if n.startswith("Charm: ")},
+        "Gates": {n for n in items.ITEM_NAME_TO_ID if n.startswith("Gate: ")},
+    }
+    location_name_groups = {
+        "Level Ups": {n for n in locations.LOCATION_NAME_TO_ID if n.startswith("Level Up: ")},
+        "Combinations": {n for n in locations.LOCATION_NAME_TO_ID if n.startswith("Combination: ")},
+    }
+
     def create_regions(self) -> None:
         regions.create_and_connect_regions(self)
         locations.create_all_locations(self)
