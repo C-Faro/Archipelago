@@ -572,7 +572,7 @@ def create_all_items(world: TheLooplerWorld) -> None:
     for item in starting_items:
         world.push_precollected(item)
 
-    world.starting_item_names = {item.name for item in starting_items}
+    world.starting_item_names = {item for item in starting_items}
 
     for item in starting_items:
         itempool.remove(item)

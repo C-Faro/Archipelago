@@ -20,7 +20,7 @@ class TheLooplerWorld(World):
 
     origin_region_name = "Menu"
 
-    starting_item_names: set[str]
+    starting_item_names = []
 
     def create_regions(self) -> None:
         regions.create_and_connect_regions(self)
