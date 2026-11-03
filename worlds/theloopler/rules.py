@@ -86,16 +86,28 @@ def set_all_entrance_rules(world: TheLooplerWorld) -> None:
     if goal is not None:
         world.set_rule(world.get_entrance("Goal Available"), goal)
 
-def set_all_location_rules(world: TheLooplerWorld) -> None:
+def specific_sanity_loops(world: TheLooplerWorld) -> list[str]:
     if not world.options.specific_sanity:
-        return
+        return []
+    enabled = {
+        "Bronze": world.options.specific_sanity_bronze,
+        "Silver": world.options.specific_sanity_silver,
+        "Gold": world.options.specific_sanity_gold,
+        "Emerald": world.options.specific_sanity_emerald,
+        "Diamond": world.options.specific_sanity_diamond,
+    }
+    return [loop for loop in LOOPS if enabled[loop]]
 
+def set_all_location_rules(world: TheLooplerWorld) -> None:
+    loops = specific_sanity_loops(world)
+    if not loops:
+        return
     for track in TRACKS:
         for car in CARS:
             rule = all_of(track_rule(world, track), car_rule(world, car))
             if rule is None:
                 continue
-            for loop in LOOPS:
+            for loop in loops:
                 location = world.get_location(f"Combination: {track} {car} Car {loop}")
                 world.set_rule(location, rule)
 

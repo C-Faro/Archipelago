@@ -4,11 +4,11 @@ from typing import TYPE_CHECKING
 
 from BaseClasses import ItemClassification, Location
 
-from .rules import TRACKS, LOOPS, CARS
+from .rules import TRACKS, LOOPS, CARS, specific_sanity_loops
 from .items import TheLooplerItem
 
 if TYPE_CHECKING:
-    from worlds import TheLooplerWorld
+    from .world import TheLooplerWorld
 
 
 LOCATION_NAME_TO_ID = {
@@ -696,9 +696,10 @@ def create_regular_locations(world: TheLooplerWorld) -> None:
 
     loop_regions = [bronze_diffi, silver_diffi, gold_diffi, emerald_diffi, diamond_diffi]
 
+    active = specific_sanity_loops(world)
     for loop, region in zip(LOOPS, loop_regions):
         names = [f"Loop: {loop} Completed"]
-        if world.options.specific_sanity:
+        if loop in active:
             names += [f"Combination: {t} {c} Car {loop}" for t in TRACKS for c in CARS]
         region.add_locations(get_location_names_with_ids(names), TheLooplerLocation)
 

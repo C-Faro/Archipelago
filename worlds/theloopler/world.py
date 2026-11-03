@@ -1,11 +1,12 @@
 from _collections_abc import Mapping
-from typing import Any
+from typing  import Any
 
 from worlds.AutoWorld import World
 
 from . import items, locations, regions, rules, web_world
 from . import options as theloopler_options
 
+from .rules import CARS, TRACKS, LOOPS
 
 class TheLooplerWorld(World):
     game = "The Loopler"
@@ -20,8 +21,6 @@ class TheLooplerWorld(World):
 
     origin_region_name = "Menu"
 
-    starting_item_names = []
-
     item_name_groups = {
         "Cars": items.CAR_TABLE,
         "Tracks": items.TRACK_TABLE,
@@ -34,6 +33,27 @@ class TheLooplerWorld(World):
     location_name_groups = {
         "Level Ups": {n for n in locations.LOCATION_NAME_TO_ID if n.startswith("Level Up: ")},
         "Combinations": {n for n in locations.LOCATION_NAME_TO_ID if n.startswith("Combination: ")},
+        **{
+            f"{loop} Combinations": {
+                n for n in locations.LOCATION_NAME_TO_ID
+                if n.startswith("Combination: ") and n.endswith(f" {loop}")
+            }
+            for loop in LOOPS
+        },
+        **{
+            f"{track} Combinations": {
+                n for n in locations.LOCATION_NAME_TO_ID
+                if n.startswith(f"Combination: {track} ")
+            }
+            for track in TRACKS
+        },
+        **{
+            f"{car} Car Combinations": {
+                n for n in locations.LOCATION_NAME_TO_ID
+                if n.startswith("Combination: ") and f" {car} Car " in n
+            }
+            for car in CARS
+        },
     }
 
     def create_regions(self) -> None:
@@ -54,5 +74,7 @@ class TheLooplerWorld(World):
 
     def fill_slot_data(self) -> Mapping[str, Any]:
         return self.options.as_dict(
-            "specific_sanity", "trap_chance", "goal", "starting_items_rando"
+            "specific_sanity", "trap_chance", "goal", "starting_items_rando",
+            "specific_sanity_bronze", "specific_sanity_silver", "specific_sanity_gold",
+            "specific_sanity_emerald", "specific_sanity_diamond"
         )
