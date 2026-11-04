@@ -170,6 +170,10 @@ ITEM_NAME_TO_ID = {
     "Trap: Skull": 158,
     "Trap: 5% Durability Removed": 159,
     "Trap: 50 Gold Removed": 160,
+    "Loop: Progressive Loops": 200,
+    "Car: Progressive Cars": 201,
+    "Track: Progressive Tracks": 202,
+    "Victory: Oil Tank": 203
 }
 
 DEFAULT_ITEM_CLASSIFICATION = {
@@ -335,7 +339,16 @@ DEFAULT_ITEM_CLASSIFICATION = {
     "Trap: Skull": ItemClassification.trap,
     "Trap: 5% Durability Removed": ItemClassification.trap,
     "Trap: 50 Gold Removed": ItemClassification.trap,
-    "Victory": ItemClassification.progression
+    "Loop: Progressive Loop": ItemClassification.progression,
+    "Track: Progressive Track": ItemClassification.progression,
+    "Car: Progressive Car": ItemClassification.progression,
+    "Victory: Oil Tank": ItemClassification.progression
+}
+
+PROGRESSIVE_TABLE = {
+    "Loop: Progressive Loop",
+    "Track: Progressive Track",
+    "Car: Progressive Car"
 }
 
 TRAP_TABLE = {
@@ -552,6 +565,20 @@ def create_item_with_correct_classification(world: TheLooplerWorld, name: str) -
 
     return TheLooplerItem(name, classification, ITEM_NAME_TO_ID[name], world.player)
 
+def create_macguffins(world: TheLooplerWorld):
+    total_amount_of_macguffins = world.options.macguffins_required + world.options.macguffins_extra
+    macguffin_pool: list[Item] = []
+
+    if total_amount_of_macguffins == 0:
+        return macguffin_pool
+
+    for i in range(0, total_amount_of_macguffins):
+        macguffin = world.create_item("Victory: Oil Tank")
+        macguffin_pool.append(macguffin)
+        print(i)
+
+    return macguffin_pool
+
 def create_all_items(world: TheLooplerWorld) -> None:
     itempool: list[Item] = []
 
@@ -576,6 +603,9 @@ def create_all_items(world: TheLooplerWorld) -> None:
 
     for item in starting_items:
         itempool.remove(item)
+
+    for item in create_macguffins(world):
+        itempool.append(item)
 
     number_of_items = len(itempool)
 

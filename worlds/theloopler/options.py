@@ -106,6 +106,59 @@ class SpecificSanityDiamond(Toggle):
     display_name = "Diamond Combinations Enabled"
     default = True
 
+class ProgressiveCars(Toggle):
+    """
+    If this option is enabled, you will get cars in order.
+    Always off if Randomize Starting Items is enabled.
+    """
+
+    display_name = "Progressive Cars"
+    default = False
+
+class ProgressiveTracks(Toggle):
+    """
+    If this option is enabled, you will get tracks in order.
+    Always off if Randomize Starting Items is enabled.
+    """
+
+    display_name = "Progressive Tracks"
+    default = False
+
+class ProgressiveDifficulties(Toggle):
+    """
+    If this option is enabled, you will get difficulties in order.
+    Always off if Randomize Starting Items is enabled.
+    """
+
+    display_name = "Progressive Difficulty"
+    default = False
+
+class MacguffinAmount(Range):
+    """
+    Creates this amount of Oil Tank items.
+    These items are required to complete the game.
+    Once all Oil Tanks are collected and the goal reached, the
+    Victory item will be collected.
+    0 disables Macguffins.
+    """
+
+    range_start = 0
+    range_end = 10
+    default = 0
+
+    display_name = "Macguffin Amount"
+
+class ExtraMacguffinAmount(Range):
+    """
+    Creates this amount of Oil Tank items on top of the original amount.
+    """
+
+    range_start = 0
+    range_end = 10
+    default = 0
+
+    display_name = "Extra Macguffin Amount"
+
 @dataclass
 class TheLooplerOptions(PerGameCommonOptions):
     specific_sanity: SpecificSanity
@@ -117,6 +170,11 @@ class TheLooplerOptions(PerGameCommonOptions):
     specific_sanity_gold: SpecificSanityGold
     specific_sanity_emerald: SpecificSanityEmerald
     specific_sanity_diamond: SpecificSanityDiamond
+    progressive_difficulties: ProgressiveDifficulties
+    progressive_tracks: ProgressiveTracks
+    progressive_cars: ProgressiveCars
+    macguffins_required: MacguffinAmount
+    macguffins_extra: ExtraMacguffinAmount
 
 option_groups = [
     OptionGroup(

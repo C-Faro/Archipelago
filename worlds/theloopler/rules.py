@@ -112,7 +112,10 @@ def set_all_location_rules(world: TheLooplerWorld) -> None:
                 world.set_rule(location, rule)
 
 def set_completion_condition(world: TheLooplerWorld) -> None:
-    world.multiworld.completion_condition[world.player] = lambda state: state.has("Victory", world.player)
+    if world.options.macguffins_required == 0:
+        world.multiworld.completion_condition[world.player] = lambda state: state.has("Victory", world.player)
+    else:
+        world.multiworld.completion_condition[world.player] = lambda state: state.has("Victory", world.player) & state.has("Victory: Oil Tank", world.player, world.options.macguffins_required)
 
 def set_all_rules(world: TheLooplerWorld) -> None:
     set_all_location_rules(world)
