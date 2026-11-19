@@ -43,7 +43,6 @@ def track_rule(world: TheLooplerWorld, track: str) -> Rule | None:
         return None
     elif world.options.progressive_tracks:
         rule = Has("Track: Progressive Track", FULL_TRACKS.index(name))
-        print(rule)
     else:
         rule = Has(name)
 
@@ -56,7 +55,6 @@ def car_rule(world: TheLooplerWorld, car: str) -> Rule | None:
         return None
     elif world.options.progressive_cars:
         rule = Has("Car: Progressive Car", FULL_CARS.index(name))
-        print(rule)
     else:
         rule = Has(name)
 
@@ -69,7 +67,6 @@ def loop_rule(world: TheLooplerWorld, loop: str) -> Rule | None:
         return None
     elif world.options.progressive_difficulties:
         rule = Has("Loop: Progressive Loop", FULL_LOOPS.index(name))
-        print(rule)
     else:
         rule = Has(name)
 

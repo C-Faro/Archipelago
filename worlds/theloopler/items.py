@@ -581,23 +581,19 @@ def create_macguffins(world: TheLooplerWorld):
 def handle_progressive_items(world: TheLooplerWorld, starting_items):
     items_to_remove = []
     items_to_add = []
-    print("handling", world.options.progressive_difficulties.value, world.options.progressive_tracks.value, world.options.progressive_cars.value)
     if world.options.progressive_difficulties.value:
-        print("progressive difficulty")
         for item in LOOP_TABLE:
             if item in starting_items:
                 continue
             items_to_remove.append(item)
             items_to_add.append(world.create_item("Loop: Progressive Loop"))
     if world.options.progressive_tracks.value:
-        print("progressive tracks")
         for item in TRACK_TABLE:
             if item in starting_items:
                 continue
             items_to_remove.append(item)
             items_to_add.append(world.create_item("Track: Progressive Track"))
     if world.options.progressive_cars.value:
-        print("progressive cars")
         for item in CAR_TABLE:
             if item in starting_items:
                 continue
@@ -606,7 +602,6 @@ def handle_progressive_items(world: TheLooplerWorld, starting_items):
     return items_to_remove, items_to_add
 
 def create_all_items(world: TheLooplerWorld) -> None:
-    print(world.options.progressive_cars, world.options.progressive_tracks, world.options.progressive_difficulties)
     itempool: list[Item] = []
 
     items_to_remove: list[str] = []
@@ -614,9 +609,9 @@ def create_all_items(world: TheLooplerWorld) -> None:
     starting_item_rando = world.options.starting_items_rando
 
     if starting_item_rando:
-        world.options.progressive_difficulties = False
-        world.options.progressive_tracks = False
-        world.options.progressive_cars = False
+        world.options.progressive_difficulties.value = False
+        world.options.progressive_tracks.value = False
+        world.options.progressive_cars.value = False
     if starting_item_rando:
         starting_loop = world.create_item(world.random.choice(sorted(LOOP_TABLE)))
         starting_track = world.create_item(world.random.choice(sorted(TRACK_TABLE)))
@@ -635,7 +630,6 @@ def create_all_items(world: TheLooplerWorld) -> None:
 
     for item in starting_items:
         items_to_remove.append(item.name)
-        print(item.name)
 
     for item_added in create_macguffins(world):
         itempool.append(item_added)
