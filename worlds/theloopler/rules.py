@@ -9,12 +9,23 @@ from .options import Goal
 if TYPE_CHECKING:
     from .world import TheLooplerWorld
 
-# The three parts of a combination. Every combination has the following preset;
 # Combination: {Track Name} {Car Name} Car {Difficulty}
 
 TRACKS = ["Infinity", "Hotdog", "Crown", "Whistle", "Whirl", "Donut", "Triangle", "Burger", "Mheep"]
 CARS = ["Dura", "Gold", "Slot", "Ghost", "Drift", "Rocket", "Luck", "Tank", "Freeze"]
 LOOPS = ["Bronze", "Silver", "Gold", "Emerald", "Diamond"]
+
+FULL_TRACKS = []
+FULL_CARS = []
+FULL_LOOPS = []
+
+def fill_tables():
+    for i in TRACKS:
+        FULL_TRACKS.append(f"Track: {i} Track")
+    for i in CARS:
+        FULL_CARS.append(f"Car: {i} Car")
+    for i in LOOPS:
+        FULL_LOOPS.append(f"Loop: {i} Loop")
 
 def track_item(track: str) -> str:
     return f"Track: {track} Track"
@@ -25,17 +36,44 @@ def car_item(car: str) -> str:
 def loop_item(loop: str) -> str:
     return f"Loop: {loop} Loop"
 
-def track_rule(world, track: str) -> Rule | None:
+def track_rule(world: TheLooplerWorld, track: str) -> Rule | None:
+    rule: Rule
     name = track_item(track)
-    return None if name in world.starting_item_names else Has(name)
+    if name in world.starting_item_names:
+        return None
+    elif world.options.progressive_tracks:
+        rule = Has("Track: Progressive Track", FULL_TRACKS.index(name))
+        print(rule)
+    else:
+        rule = Has(name)
 
-def car_rule(world, car: str) -> Rule | None:
+    return rule
+
+def car_rule(world: TheLooplerWorld, car: str) -> Rule | None:
+    rule: Rule
     name = car_item(car)
-    return None if name in world.starting_item_names else Has(name)
+    if name in world.starting_item_names:
+        return None
+    elif world.options.progressive_cars:
+        rule = Has("Car: Progressive Car", FULL_CARS.index(name))
+        print(rule)
+    else:
+        rule = Has(name)
 
-def loop_rule(world, loop: str) -> Rule | None:
+    return rule
+
+def loop_rule(world: TheLooplerWorld, loop: str) -> Rule | None:
+    rule: Rule
     name = loop_item(loop)
-    return None if name in world.starting_item_names else Has(name)
+    if name in world.starting_item_names:
+        return None
+    elif world.options.progressive_difficulties:
+        rule = Has("Loop: Progressive Loop", FULL_LOOPS.index(name))
+        print(rule)
+    else:
+        rule = Has(name)
+
+    return rule
 
 def all_of(*rules: Rule | None) -> Rule | None:
     result: Rule | None = None
@@ -115,9 +153,10 @@ def set_completion_condition(world: TheLooplerWorld) -> None:
     if world.options.macguffins_required == 0:
         world.multiworld.completion_condition[world.player] = lambda state: state.has("Victory", world.player)
     else:
-        world.multiworld.completion_condition[world.player] = lambda state: state.has("Victory", world.player) & state.has("Victory: Oil Tank", world.player, world.options.macguffins_required)
+        world.multiworld.completion_condition[world.player] = lambda state: state.has("Victory", world.player) & state.has("Grand Prix Trophy", world.player, world.options.macguffins_required)
 
 def set_all_rules(world: TheLooplerWorld) -> None:
+    fill_tables()
     set_all_location_rules(world)
     set_all_entrance_rules(world)
     set_completion_condition(world)

@@ -76,5 +76,7 @@ class TheLooplerWorld(World):
         return self.options.as_dict(
             "specific_sanity", "trap_chance", "goal", "starting_items_rando",
             "specific_sanity_bronze", "specific_sanity_silver", "specific_sanity_gold",
-            "specific_sanity_emerald", "specific_sanity_diamond"
+            "specific_sanity_emerald", "specific_sanity_diamond", "progressive_difficulties",
+            "progressive_cars", "progressive_tracks", "macguffins_required",
+            "macguffins_extra"
         )
